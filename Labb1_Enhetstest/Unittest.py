@@ -12,6 +12,13 @@ class TestCalculator(unittest.TestCase):
         expected = 11
         self.assertEqual(result, expected)
 
+    def test_pwr(self):
+        """Test case for to the power of"""
+        self.calc = Calculator()
+        result = self.calc.pwr(10, 2)
+        expected = 100
+        self.assertEqual(result, expected)
+
     def test_subtract(self):
         """Test case function for subtraction"""
         self.calc = Calculator()
