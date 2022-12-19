@@ -1,6 +1,8 @@
-from selenium.webdriver import Keys
+import pytest
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
@@ -24,5 +26,9 @@ class Webbhallen:
         add_to_cart_button.click()
 
         WebDriverWait(self.driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//span[@id='site-container']/div[4]/div/div/div[4]/button[2]"))).click()
+            EC.presence_of_element_located(
+                (By.XPATH, "//span[@id='site-container']/div[4]/div/div/div[4]/button[2]"))).click()
 
+    def go_to_cart(self):
+        cart_menu = self.driver.find_element(By.XPATH, "//div[@id='main-header']/div/div/div[4]/div/label[2]")
+        ActionChains(self.driver).move_to_element(cart_menu).click().perform()
