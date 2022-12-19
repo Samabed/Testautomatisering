@@ -18,3 +18,7 @@ class Webbhallen:
 
         WebDriverWait(self.driver, 10).until(
             EC.presence_of_element_located((By.XPATH, "//div[@class='search-results']")))
+
+    def add_product_to_cart(self):
+        add_to_cart_button = self.driver.find_element(By.XPATH, "//button[@id='add-product-to-cart']")
+        add_to_cart_button.click()
