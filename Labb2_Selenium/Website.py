@@ -1,5 +1,7 @@
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class Webbhallen:
@@ -13,3 +15,6 @@ class Webbhallen:
         search_input = self.driver.find_element(By.XPATH, "//input[@placeholder='Sök bland över 16 000 produkter']")
         search_input.send_keys(product_name)
         search_input.send_keys(Keys.ENTER)
+
+        WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//div[@class='search-results']")))
