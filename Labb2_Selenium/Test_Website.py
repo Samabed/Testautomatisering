@@ -21,16 +21,15 @@ def test_search_for_product(driver):
     assert "335143" in search_results
 
 
-def test_check_product_price(driver):
+def test_check_product_price(driver, price=450):
     webbhallen = Webbhallen(driver)
     webbhallen.go_to_product_page()
 
     # Hämta priset på produkten
-    price_element = driver.find_element(By.XPATH, "//div[@class='price-current']")
-    price = float(price_element.text.strip()[:-2].replace(',', '.'))
+    price_element = driver.find_element(By.XPATH, "//div[@id='add-product-to-cart']")
 
     # Kontrollera att priset är korrekt
-    assert price == 450.00
+    assert price == 450.00 in price_element
 
 
 def test_add_product_to_cart(driver):
