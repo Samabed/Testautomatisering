@@ -17,8 +17,8 @@ def test_search_for_product(driver):
     webbhallen.search_for_product('Apple AirTag')
 
     # Kontrollera att sökresultatet visas på sidan
-    search_results = driver.find_elements(By.XPATH, "//div[@class='search-results']")
-    assert len(search_results) > 0
+    search_results = driver.find_elements(By.XPATH, "//p[@class='text-secondary']")
+    assert "335143" in search_results
 
 
 def test_check_product_price(driver):
