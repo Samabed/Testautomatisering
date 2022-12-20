@@ -42,6 +42,15 @@ def test_add_product_to_cart(driver):
     assert len(cart_items) > 0
 
 
+def test_go_to_cart(driver):
+    webbhallen = Webbhallen(driver)
+    webbhallen.go_to_cart()
+
+    # Kontrollera att kundvagnen öppnas och att den innehåller produkten som lades till
+    cart_items = driver.find_elements(By.XPATH, "//div[@class='cart-item']")
+    assert len(cart_items) > 0
+
+
 
 
 
