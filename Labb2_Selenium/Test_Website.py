@@ -32,5 +32,17 @@ def test_check_product_price(driver):
     # Kontrollera att priset är korrekt
     assert price == 450.00
 
+def test_add_product_to_cart(driver):
+    webbhallen = Webbhallen(driver)
+    webbhallen.go_to_product_page()
+    webbhallen.add_product_to_cart()
+
+    # Kontrollera att produkten finns i kundvagnen
+    cart_items = driver.find_elements(By.XPATH, "//div[@class='cart-item']")
+    assert len(cart_items) > 0
+
+
+
+
 
 
