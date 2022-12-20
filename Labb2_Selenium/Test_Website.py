@@ -21,4 +21,16 @@ def test_search_for_product(driver):
     assert len(search_results) > 0
 
 
+def test_check_product_price(driver):
+    webbhallen = Webbhallen(driver)
+    webbhallen.go_to_product_page()
+
+    # Hämta priset på produkten
+    price_element = driver.find_element(By.XPATH, "//div[@class='price-current']")
+    price = float(price_element.text.strip()[:-2].replace(',', '.'))
+
+    # Kontrollera att priset är korrekt
+    assert price == 450.00
+
+
 
