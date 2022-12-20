@@ -38,8 +38,8 @@ def test_add_product_to_cart(driver):
     webbhallen.add_product_to_cart()
 
     # Kontrollera att produkten finns i kundvagnen
-    cart_items = driver.find_elements(By.XPATH, "//div[@class='cart-item']")
-    assert len(cart_items) > 0
+    cart_items = driver.find_elements(By.XPATH, "//div[@class='cart-counter']")
+    assert len(cart_items) == 1
 
 
 def test_go_to_cart(driver):
@@ -47,7 +47,7 @@ def test_go_to_cart(driver):
     webbhallen.go_to_cart()
 
     # Kontrollera att kundvagnen öppnas och att den innehåller produkten som lades till
-    cart_items = driver.find_elements(By.XPATH, "//div[@class='cart-item']")
+    cart_items = driver.find_elements(By.XPATH, "//div[@class='input-number _tiny hide-spinner")
     assert len(cart_items) > 0
 
 
@@ -55,9 +55,9 @@ def test_go_to_product_page(driver):
     webbhallen = Webbhallen(driver)
     webbhallen.go_to_product_page()
 
-    # Kontrollera att produktsidan öppnas och att det finns en knapp för att lägga till produkten i kundvagnen
-    add_to_cart_basket = driver.find_elements(By.XPATH, "//button[@id='add-product-to-cart']")
-    assert len
+    # Kontrollera att totalsumma stämmer med produkten
+    add_to_cart_basket = driver.find_elements(By.XPATH, "//div[@class='cart-total']")
+    assert "450.00" in add_to_cart_basket
 
     driver.close()
 
