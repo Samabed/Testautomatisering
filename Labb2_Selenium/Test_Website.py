@@ -51,16 +51,12 @@ def test_go_to_cart(driver):
     assert len(cart_items) > 0
 
 
-def test_go_to_product_page(driver):
+def test_go_to_basket_page(driver):
     webbhallen = Webbhallen(driver)
-    webbhallen.go_to_product_page()
+    webbhallen.go_to_basket_page()
 
     # Kontrollera att totalsumma stämmer med produkten
     add_to_cart_basket = driver.find_elements(By.XPATH, "//div[@class='cart-total']")
     assert "450.00" in add_to_cart_basket
 
     driver.close()
-
-
-
-
