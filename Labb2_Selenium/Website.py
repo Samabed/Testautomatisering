@@ -4,11 +4,14 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
 
+driver = webdriver.Chrome()
 
 class Webbhallen:
     def __init__(self, driver):
         self.driver = driver
+
 
     def go_to_product_page(self):
         self.driver.get('https://www.webhallen.com/se/product/335143-Apple-AirTag-1-Pack')
