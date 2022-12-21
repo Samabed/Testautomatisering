@@ -1,14 +1,10 @@
+# Inlämning 2 - Selenium
 
-
-# Inlämning 1 - Enhetstest
-
-Inlämningsuppgift 1 till utbildningen ITHS Agil testautomatisering
+Inlämningsuppgift 2 till utbildningen ITHS Agil testautomatisering
 
 ## Uppgift
 
-Du ska använda dig av ett testramverk i ett programmeringsspråk (som du själv väljer) för att ta fram enhetstester på ett litet open source-projekt eller något du själv tidigare byggt.
-Åtminstone fem unika och kraftfulla enhetstester ska skapas och sedan lämnas in.
-
+Du ska skriva minst fem unika och kra�fulla automatiserade tester på UI-nivå med Selenium mot en hemsida som du själv väljer, du får även välja fritt vilket språk du använder för testerna så länge det är ett av de supportade språken (se här: https://www.selenium.dev/downloads/ ).
 ## Programmeringsspråk
 
 ```
